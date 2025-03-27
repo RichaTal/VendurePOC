@@ -56,6 +56,17 @@
                             [readonly]="!('UpdateStockLocation' | hasPermission)"
                         ></vdr-rich-text-editor>
                     </vdr-form-field>
+                    <vdr-form-field
+                        class="form-grid-span"
+                        [label]="'common.category' | translate"
+                        for="slug"
+                        [errors]="{ pattern: 'catalog.slug-pattern-error' | translate }"
+                    >
+                        <vdr-rich-text-editor
+                            formControlName="category"
+                            [readonly]="!('UpdateStockLocation' | hasPermission)"
+                        ></vdr-rich-text-editor>
+                    </vdr-form-field>
                 </div>
             </vdr-card>
             <vdr-card

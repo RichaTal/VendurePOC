@@ -18,6 +18,7 @@ export const GET_STOCK_LOCATION_LIST = gql`
         updatedAt
         name
         description
+        category
     }
 `;
 

@@ -23,6 +23,7 @@ const STOCK_LOCATION_DETAIL_FRAGMENT = gql`
         updatedAt
         name
         description
+        category
     }
 `;
 
@@ -67,6 +68,7 @@ export class StockLocationDetailComponent
     detailForm = this.formBuilder.group({
         name: ['', Validators.required],
         description: [''],
+        category: [''],
         customFields: this.formBuilder.group(getCustomFieldsDefaults(this.customFields)),
     });
 
@@ -98,6 +100,7 @@ export class StockLocationDetailComponent
         const input = {
             name,
             description,
+            category,
             customFields,
         } satisfies CreateStockLocationInput;
         this.dataService.mutate(CreateStockLocationDocument, { input }).subscribe(
@@ -130,6 +133,7 @@ export class StockLocationDetailComponent
                         id: taxRate.id,
                         name: formValue.name,
                         description: formValue.description,
+                        category: formValue.category,
                         customFields: formValue.customFields,
                     } satisfies UpdateStockLocationInput;
                     return this.dataService.mutate(UpdateStockLocationDocument, { input });
@@ -158,6 +162,7 @@ export class StockLocationDetailComponent
         this.detailForm.patchValue({
             name: entity.name,
             description: entity.description,
+            category: entity.category,
         });
         if (this.customFields.length) {
             this.setCustomFieldFormValues(this.customFields, this.detailForm.get('customFields'), entity);

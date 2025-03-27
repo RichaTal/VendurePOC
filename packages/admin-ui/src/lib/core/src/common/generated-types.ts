@@ -969,6 +969,7 @@ export type CreateShippingMethodInput = {
 export type CreateStockLocationInput = {
   customFields?: InputMaybe<Scalars['JSON']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
   name: Scalars['String']['input'];
 };
 
@@ -6762,6 +6763,7 @@ export type UpdateShippingMethodInput = {
 export type UpdateStockLocationInput = {
   customFields?: InputMaybe<Scalars['JSON']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
   id: Scalars['ID']['input'];
   name?: InputMaybe<Scalars['String']['input']>;
 };
@@ -8990,7 +8992,7 @@ export type GetShippingMethodListQuery = { shippingMethods: { __typename?: 'Ship
 
 export type ShippingMethodListItemFragment = { __typename?: 'ShippingMethod', id: string, createdAt: any, updatedAt: any, code: string, name: string, description: string, fulfillmentHandlerCode: string };
 
-export type StockLocationDetailFragment = { __typename?: 'StockLocation', id: string, createdAt: any, updatedAt: any, name: string, description: string };
+export type StockLocationDetailFragment = { __typename?: 'StockLocation', id: string, createdAt: any, updatedAt: any, name: string, description: string, category: string };
 
 export type GetStockLocationDetailQueryVariables = Exact<{
   id: Scalars['ID']['input'];

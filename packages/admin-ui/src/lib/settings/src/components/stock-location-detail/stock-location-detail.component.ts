@@ -93,7 +93,7 @@ export class StockLocationDetailComponent
         if (!this.detailForm.dirty) {
             return;
         }
-        const { name, description, customFields } = this.detailForm.value;
+        const { name, description, category, customFields } = this.detailForm.value;
         if (!name) {
             return;
         }

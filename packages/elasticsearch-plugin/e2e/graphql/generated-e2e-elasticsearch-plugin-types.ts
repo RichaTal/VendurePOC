@@ -930,6 +930,7 @@ export type CreateShippingMethodInput = {
 };
 
 export type CreateStockLocationInput = {
+  category?: InputMaybe<Scalars['String']['input']>;
   customFields?: InputMaybe<Scalars['JSON']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   name: Scalars['String']['input'];
@@ -5827,6 +5828,7 @@ export type StockLevelInput = {
 };
 
 export type StockLocation = Node & {
+  category?: Maybe<Scalars['String']['output']>;
   createdAt: Scalars['DateTime']['output'];
   customFields?: Maybe<Scalars['JSON']['output']>;
   description: Scalars['String']['output'];
@@ -5838,6 +5840,7 @@ export type StockLocation = Node & {
 export type StockLocationFilterParameter = {
   _and?: InputMaybe<Array<StockLocationFilterParameter>>;
   _or?: InputMaybe<Array<StockLocationFilterParameter>>;
+  category?: InputMaybe<StringOperators>;
   createdAt?: InputMaybe<DateOperators>;
   description?: InputMaybe<StringOperators>;
   id?: InputMaybe<IdOperators>;
@@ -5864,6 +5867,7 @@ export type StockLocationListOptions = {
 };
 
 export type StockLocationSortParameter = {
+  category?: InputMaybe<SortOrder>;
   createdAt?: InputMaybe<SortOrder>;
   description?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
@@ -6486,6 +6490,7 @@ export type UpdateShippingMethodInput = {
 };
 
 export type UpdateStockLocationInput = {
+  category?: InputMaybe<Scalars['String']['input']>;
   customFields?: InputMaybe<Scalars['JSON']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   id: Scalars['ID']['input'];
